@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:characters/characters.dart';
 
 enum Mood {
-  happy('Счастье', '😀', 10),
-  sad('Грусть', '😟', 3),
-  boredom('Скука', '😐}', 2),
-  disease('Боль', '🤕}', 7),
-  anxiety('Тревога', '😧', 4);
+  happy('Счастье', '\u{1F600}', 10),
+  sad('Грусть', '\u{1F622}', 3),
+  boredom('Скука', '\u{1F611}', 2),
+  disease('Боль', '\u{1F912}', 7),
+  anxiety('Тревога', '\u{1F628}', 4);
 
   final String description;
   final String emoji;
@@ -29,7 +29,7 @@ void main() {
   int codePoint = mood.emoji.runes.first;
   print('\nЮникод вашего эмодзи: U+${codePoint.toRadixString(16).toUpperCase()}');
 
-  stdout.write('\nХотите просмотреть сложные эмодзи? (да/нет): ');
+  stdout.write('\nХотите просмотреть сложные эмодзи? (yes/no): ');
   String answer = stdin.readLineSync()?.toLowerCase() ?? 'нет';
 
   if (answer == 'yes' || answer == 'y') {
